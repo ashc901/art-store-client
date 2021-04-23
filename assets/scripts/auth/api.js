@@ -18,14 +18,15 @@ const signIn = function(data) {
   })
 }
 
-const changePassword = function(data) {
+const changePassword = function (data) {
+  console.log(data)
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + "/change-password",
-    data: data,
+    url: config.apiUrl + '/change-password',
     headers: {
-      Authorization: 'Bearer' + store.user.token
-    }
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: data,
   })
 }
 

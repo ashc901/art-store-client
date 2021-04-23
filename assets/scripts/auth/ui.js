@@ -23,7 +23,7 @@ const onChangePasswordSuccess = function (){
 
   $('#message').text("Password successfully changed." )
   $('#change-password').trigger('reset')
-//  $('.change-password').
+  $('.modal').modal('hide')
 }
 
 const onSignOutSuccess = function () {
