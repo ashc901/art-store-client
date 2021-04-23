@@ -46,15 +46,37 @@ const onChangePassword = function (event) {
 //sign out
 const onSignOut = function(event) {
   event.preventDefault()
-  console.log(data)
+  //console.log(data)
   api.signOut()
     .then(ui.onSignOutSuccess)
     .catch(ui.onError)
 }
 
+//product section
+
+//create item
+const onCreateItem = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const data = getFormFields(form)
+
+
+
+  api.createItem(data)
+    .then(ui.onCreateItemSuccess)
+    .catch(ui.onError)
+  console.log('onCreateItem')
+}
+
+//index
+
+
+}
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onCreateItem
 }

@@ -40,9 +40,24 @@ const signOut = function() {
   })
 }
 
+//products
+
+
+const createItem = function (data) {
+    return $.ajax ({
+      method: 'POST',
+      url: config.apiUrl + '/products',
+      data: data,
+      headers: {
+        Authorization: 'Bearer ' + store.user.token
+      }
+    })
+  }
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createItem
 }

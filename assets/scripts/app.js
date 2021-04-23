@@ -14,4 +14,8 @@ $(() => {
   $('#show-change-password').on('click', etcEvents.onShowChangePassword)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
+
+  //products
+  $('#new-item').on('submit', authEvents.onCreateItem)
+  $('#index').on('click', authEvents.onIndexItems)
 })

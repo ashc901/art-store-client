@@ -23,7 +23,7 @@ const onChangePasswordSuccess = function (){
 
   $('#message').text("Password successfully changed." )
   $('#change-password').trigger('reset')
-  $('.modal').modal('hide')
+  $('modal').modal('hide')
 }
 
 const onSignOutSuccess = function () {
@@ -32,8 +32,33 @@ const onSignOutSuccess = function () {
   $('#change-password').hide()
   $('#sign-in').show()
   $('#sign-up').show()
+  $('.signed-in').hide()
   store.user = null
 }
+
+
+//product section
+
+
+const onCreateItemSuccess = function(response) {
+  store.item = response.item
+
+  // const itemHtml = `
+  //   <h4>${response.item.name}</h4>
+  //   <p>${response.item.price}</p>
+  // `
+  $('#message').text("Item successfully created.")
+//  $('#items').html(itemHtml)
+  $('#new-item').trigger('reset')
+}
+
+//error
+const onError = function(err) {
+  console.log(err)
+  $('#message').text("Whoopsie doodle, there's been an error.")
+}
+
+
 
 
 module.exports = {
@@ -41,5 +66,8 @@ module.exports = {
   onSignInSuccess,
   onChangePasswordSuccess,
   onShowChangePassword,
-  onSignOutSuccess
+  onSignOutSuccess,
+  onCreateItemSuccess,
+
+  onError
 }

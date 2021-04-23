@@ -38,43 +38,59 @@
 
     <section class = "signed-in">
       <button id="show-change-password">Change Password</button>
-      <div class="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Change Password</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-              <form id="change-password">
-                <div class="modal-body">
+      <div id="change-modal">
+        <div class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Change Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <form id="change-password">
+                  <div class="modal-body">
 
-                  <input type= "password" name="passwords[old]" placeholder="old password">
-                  <input type="password" name="passwords[new]" placeholder="new password">
+                    <input type= "password" name="passwords[old]" placeholder="old password">
+                    <input type="password" name="passwords[new]" placeholder="new password">
 
-                </div>
+                  </div>
 
-                <div class="modal-footer">
-                  <!-- here's what fixed the change password functionality, add class of change password  -->
-                  <button class= "change-password" type="submit" value="Change Password">Save changes</button>
-                  <button type="button" data-dismiss="modal">Close</button>
-                </div>
-              </form>
+                  <div class="modal-footer">
+                    <!-- here's what fixed the change password functionality, add class of change password  -->
+                    <button class= "change-password" type="submit" value="Change Password">Save changes</button>
+                    <button type="button" data-dismiss="modal">Close</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      <!-- <form id = "change-password" class="signed-in">
-        <h4>Change Password</h4>
-        <input type= "password" name="passwords[old]" placeholder="old password">
-        <input type="password" name="passwords[new]" placeholder="new password">
-        <button class="change-password" type="submit" value="Change Password">Save Changes</button>
-      </form> -->
     </section>
 
-    <section class = "signed-in">
+    <section class="signed-in">
       <button id="sign-out">Sign Out</button>
     </section>
 
+    <section class="signed-in">
+      <form id="new-item">
+        <h4>New Item</h4>
+        <input name="product[name]" type="text" placeholder="Item Name">
+        <input name="product[price]"type="number" placeholder="Price">
+        <button>Create</button>
+      </form>
+    </section>
+
+      <div id="items" class="signed-in"></div>
+
+<!--GET INDEX-->
+    <section class="signed-in">
+      <h4>Show All of Your Store's Items</h4>
+      <button id="index">Show All Items</button>
+    </section>
+
+    <!-- <section class="signed-in item-list">
+      <button>Stock</button>
+    </section> -->
   </body>
 </html>
