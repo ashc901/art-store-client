@@ -54,18 +54,16 @@ const onIndexSuccess = function (response) {
     console.log(response)
 
     let productsHtml = ''
-    console.log("productsHtml = ",  productsHtml)
-    console.log("productsHtml should be an empty string")
-    console.log("now I need to figure out why 'products.forEach' isn't working \
-    since it obviously makes it into this function")
 
     products.forEach(product => {
       productsHtml += `
         <h4>${product.name}</h4>
         <p>$${product.price}</p>
+        <button class='product-delete-dynamic' data-id${product._id}>Delete</button>
+        <form class='product-update-dynamic' data-id${product._id}>
+          <input name='product[name]' type='text' placeholder='New Product Name'>
+          <input name='product[price]' type='nunber' placeholder='New Price'>
         `
-      console.log(productsHtml)
-      console.log("productsHtml should not be an empty string after this function runs")
     })
     // setting the books-display to have the html of all the books
     $('#products-display').html(productsHtml)

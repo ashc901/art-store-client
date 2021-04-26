@@ -76,7 +76,6 @@ const onIndexItems = function() {
 
   api.index()
     .then((response) => {
-      console.log(response)
       (ui.onIndexSuccess(response))
     })
     .catch(ui.onError)
