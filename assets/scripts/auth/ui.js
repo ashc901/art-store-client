@@ -68,6 +68,7 @@ const onIndexSuccess = function (response) {
         `
     })
     $('#products-display').html(productsHtml)
+    $('#message').text('Your items.')
 }
 
 const onDeleteSuccess = function() {
