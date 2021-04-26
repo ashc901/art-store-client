@@ -72,7 +72,7 @@ const onCreateItem = function (event) {
 //index
 const onIndexItems = function() {
   console.log("getgot")
-  event.preventDefault()
+  //event.preventDefault()
 
   api.index()
     .then((response) => {
@@ -87,8 +87,8 @@ const onDynamicDelete = function (event) {
   const id = $(event.target).data('id')
 
   api.destroy(id)
+    .then(onIndexItems)
     .then(ui.onDeleteSuccess)
-    .then(ui.onIndexSuccess)
     .catch(ui.onError)
 }
 
@@ -101,8 +101,8 @@ const onDynamicUpdate = function (event) {
   const id = $(event.target).data('id')
 
   api.update(id, formData)
+    .then(onIndexItems)
     .then(ui.onUpdateSuccess)
-  //  .then(onIndexItems)
     .catch(ui.onError)
 }
 
