@@ -54,10 +54,21 @@ const createItem = function (data) {
     })
   }
 
+
+const index = function (){
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/products',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  createItem
+  createItem,
+  index
 }

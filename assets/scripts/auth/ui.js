@@ -41,16 +41,37 @@ const onSignOutSuccess = function () {
 
 
 const onCreateItemSuccess = function(response) {
-  store.item = response.item
-
-  // const itemHtml = `
-  //   <h4>${response.item.name}</h4>
-  //   <p>${response.item.price}</p>
-  // `
+  store.product = response.product
+  console.log(response)
   $('#message').text("Item successfully created.")
 //  $('#items').html(itemHtml)
   $('#new-item').trigger('reset')
 }
+
+
+const onIndexSuccess = function (response) {
+    const products = response.products
+    console.log(response)
+
+    let productsHtml = ''
+    console.log("productsHtml = ",  productsHtml)
+    console.log("productsHtml should be an empty string")
+    console.log("now I need to figure out why 'products.forEach' isn't working \
+    since it obviously makes it into this function")
+
+    products.forEach(product => {
+      productsHtml += `
+        <h4>${product.name}</h4>
+        <p>$${product.price}</p>
+        `
+      console.log(productsHtml)
+      console.log("productsHtml should not be an empty string after this function runs")
+    })
+    // setting the books-display to have the html of all the books
+    $('#products-display').html(productsHtml)
+}
+
+
 
 //error
 const onError = function(err) {
@@ -67,7 +88,9 @@ module.exports = {
   onChangePasswordSuccess,
   onShowChangePassword,
   onSignOutSuccess,
+
   onCreateItemSuccess,
+  onIndexSuccess,
 
   onError
 }

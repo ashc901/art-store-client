@@ -70,13 +70,24 @@ const onCreateItem = function (event) {
 }
 
 //index
+const onIndexItems = function() {
+  console.log("getgot")
+  event.preventDefault()
 
-
+  api.index()
+    .then((response) => {
+      console.log(response)
+      (ui.onIndexSuccess(response))
+    })
+    .catch(ui.onError)
 }
+
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  onCreateItem
+  onCreateItem,
+  onIndexItems
 }
