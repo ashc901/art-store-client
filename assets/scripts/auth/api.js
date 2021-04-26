@@ -64,11 +64,36 @@ const index = function (){
     }
   })
 }
+
+const destroy = function (id) {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/products/' + id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const update = function(id, formData) {
+  return $.ajax({
+
+    method: 'PATCH',
+    url: config.apiUrl + '/products/' + id,
+    data: formData,
+    headers: {
+        Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
+
   createItem,
-  index
+  index,
+  destroy,
+  update
 }

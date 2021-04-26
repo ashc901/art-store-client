@@ -59,16 +59,25 @@ const onIndexSuccess = function (response) {
       productsHtml += `
         <h4>${product.name}</h4>
         <p>$${product.price}</p>
-        <button class='product-delete-dynamic' data-id${product._id}>Delete</button>
-        <form class='product-update-dynamic' data-id${product._id}>
+        <button class='product-delete-dynamic' data-id=${product._id}>Delete</button>
+        <br>
+        <form class='product-update-dynamic' data-id=${product._id}>
           <input name='product[name]' type='text' placeholder='New Product Name'>
-          <input name='product[price]' type='nunber' placeholder='New Price'>
+          <input name='product[price]' type='number' placeholder='New Price'>
+          <button>Update</button>
         `
     })
-    // setting the books-display to have the html of all the books
     $('#products-display').html(productsHtml)
 }
 
+const onDeleteSuccess = function() {
+  $('#message').text('Deleted')
+}
+
+const onUpdateSuccess = function() {
+  $('#message').text('Updated')
+  $('form').trigger('reset')
+}
 
 
 //error
@@ -89,6 +98,8 @@ module.exports = {
 
   onCreateItemSuccess,
   onIndexSuccess,
+  onDeleteSuccess,
+  onUpdateSuccess,
 
   onError
 }

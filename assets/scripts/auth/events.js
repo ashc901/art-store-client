@@ -80,13 +80,40 @@ const onIndexItems = function() {
     })
     .catch(ui.onError)
 }
+//delete
+const onDynamicDelete = function (event) {
 
+  event.preventDefault()
+  const id = $(event.target).data('id')
+
+  api.destroy(id)
+    .then(ui.onDeleteSuccess)
+    .then(ui.onIndexSuccess)
+    .catch(ui.onError)
+}
+
+//update
+const onDynamicUpdate = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const formData = getFormFields(form)
+  const id = $(event.target).data('id')
+
+  api.update(id, formData)
+    .then(ui.onUpdateSuccess)
+  //  .then(onIndexItems)
+    .catch(ui.onError)
+}
 
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
+
   onCreateItem,
-  onIndexItems
+  onIndexItems,
+  onDynamicDelete,
+  onDynamicUpdate
 }

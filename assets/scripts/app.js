@@ -18,4 +18,6 @@ $(() => {
   //products
   $('#new-item').on('submit', authEvents.onCreateItem)
   $('#index').on('click', authEvents.onIndexItems)
+  $('#products-display').on('click', '.product-delete-dynamic', authEvents.onDynamicDelete)
+  $('#products-display').on('submit', '.product-update-dynamic', authEvents.onDynamicUpdate)
 })
