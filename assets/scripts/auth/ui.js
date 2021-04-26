@@ -2,7 +2,7 @@ const store = require('../store')
 
 const onSignUpSuccess = function (response) {
   $('#message').text("Account successfully created.")
-  $('#sign-up').trigger('reset')
+  $('form').trigger('reset')
 }
 
 const onSignInSuccess = function (response) {
