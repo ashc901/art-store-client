@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Auction House</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+      <div class="intro">
+        <h1>Auction Home</h1>
+
+        <h3 id="message">A place where you can come to sell your art without pressure.</h3>
+    </div>
+    <div class="one">
+      <form id="sign-up">
+        <h2>Sign up here!</h2>
+        <input type="email" name="credentials[email]" placeholder="123@email.com" required>
+        <br>
+        <input type="password" name="credentials[password]" placeholder="Password" required>
+        <br>
+        <input type="password" name="credentials[password_confirmation]" placeholder="Password" required>
+        <hr>
+        <input type = "submit" value="Sign Up">
+      </form>
+    </div>
+
+    <div class="two">
+      <form id="sign-in">
+        <h2>Sign in here!</h2>
+        <input name="credentials[email]" type="email" placeholder="Email" required>
+        <br>
+        <input name="credentials[password]" type="password" placeholder="Pasword" required>
+        <hr>
+        <button>Sign in</button>
+      </form>
+    </div>
+
+    <section class = "signed-in">
+      <button id="show-change-password">Change Password</button>
+      <div id="change-modal">
+        <div class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Change Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <form id="change-password">
+                  <div class="modal-body">
+
+                    <input type= "password" name="passwords[old]" placeholder="old password">
+                    <input type="password" name="passwords[new]" placeholder="new password">
+
+                  </div>
+
+                  <div class="modal-footer">
+                    <!-- here's what fixed the change password functionality, add class of change password  -->
+                    <button class= "change-password" type="submit" value="Change Password">Save changes</button>
+                    <button type="button" data-dismiss="modal">Close</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="signed-in">
+      <button id="sign-out">Sign Out</button>
+    </section>
+
+    <section class="signed-in">
+      <form id="new-item">
+        <h4>New Item</h4>
+        <input name="product[name]" type="text" placeholder="Item Name">
+        <input name="product[price]"type="number" placeholder="Price">
+        <button>Create</button>
+      </form>
+    </section>
+
+      <div id="items" class="signed-in"></div>
+
+<!--GET INDEX-->
+    <section class="signed-in">
+      <h4>Stock</h4>
+      <button id="index">All Items</button>
+      <div id="products-display"></div>
+    </section>
+
+    <!-- <section class="signed-in item-list">
+      <button>Stock</button>
+    </section> -->
+  </body>
+</html>
