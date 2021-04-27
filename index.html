@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>insert title later</title>
+      <title>Auction House</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -13,28 +13,34 @@
     </head>
 
     <body>
-      <h1>Store</h1>
+      <div class="intro">
+        <h1>Auction Home</h1>
 
-      <h3 id="message"></h3>
-
-      <section>
+        <h3 id="message">A place where you can come to sell your art without pressure.</h3>
+    </div>
+    <div class="one">
       <form id="sign-up">
         <h2>Sign up here!</h2>
         <input type="email" name="credentials[email]" placeholder="123@email.com" required>
+        <br>
         <input type="password" name="credentials[password]" placeholder="Password" required>
-        <input type="password" name="credentials[password_confirmation]" placeholder="password" required>
+        <br>
+        <input type="password" name="credentials[password_confirmation]" placeholder="Password" required>
+        <hr>
         <input type = "submit" value="Sign Up">
       </form>
-    </section>
+    </div>
 
-    <section>
+    <div class="two">
       <form id="sign-in">
         <h2>Sign in here!</h2>
         <input name="credentials[email]" type="email" placeholder="Email" required>
+        <br>
         <input name="credentials[password]" type="password" placeholder="Pasword" required>
+        <hr>
         <button>Sign in</button>
       </form>
-    </section>
+    </div>
 
     <section class = "signed-in">
       <button id="show-change-password">Change Password</button>

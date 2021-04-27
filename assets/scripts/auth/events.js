@@ -106,6 +106,8 @@ const onDynamicUpdate = function (event) {
     .catch(ui.onError)
 }
 
+
+
 module.exports = {
   onSignUp,
   onSignIn,

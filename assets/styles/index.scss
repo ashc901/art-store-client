@@ -1,1 +1,30 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color: #C79292;
+}
+.intro {
+  display: block;
+  width: 400px;
+  padding: 10px;
+}
+
+.one {
+  display: block;
+  width: 25%;
+  position: fixed;
+  top: 30px;
+  right: 10%;
+  text-align: center;
+  padding: 5px;
+}
+
+.two {
+  display: block;
+  width: 25%;
+  text-align: center;
+  padding: 5px;
+  position: fixed;
+  top: 30px;
+  left: 410px;
+}
