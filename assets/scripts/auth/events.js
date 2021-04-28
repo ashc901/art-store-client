@@ -64,6 +64,7 @@ const onCreateItem = function (event) {
 
 
   api.createItem(data)
+    .then(console.log(data))
     .then(ui.onCreateItemSuccess)
     .catch(ui.onError)
   console.log('onCreateItem')

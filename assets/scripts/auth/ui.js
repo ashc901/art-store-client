@@ -44,7 +44,6 @@ const onCreateItemSuccess = function(response) {
   store.product = response.product
   console.log(response)
   $('#message').text("Item successfully created.")
-//  $('#items').html(itemHtml)
   $('#new-item').trigger('reset')
 }
 
@@ -65,6 +64,7 @@ const onIndexSuccess = function (response) {
           <input name='product[name]' type='text' placeholder='New Product Name'>
           <input name='product[price]' type='number' placeholder='New Price'>
           <button>Update</button>
+          </form>
         `
     })
     $('#products-display').html(productsHtml)
