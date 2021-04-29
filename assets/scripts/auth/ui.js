@@ -42,7 +42,6 @@ const onSignOutSuccess = function () {
 
 const onCreateItemSuccess = function(response) {
   store.product = response.product
-  console.log(response)
   $('#message').text("Item successfully created.")
   $('#new-item').trigger('reset')
 }
@@ -50,7 +49,6 @@ const onCreateItemSuccess = function(response) {
 
 const onIndexSuccess = function (response) {
     const products = response.products
-    console.log(response)
 
     let productsHtml = ''
 
@@ -83,7 +81,6 @@ const onUpdateSuccess = function() {
 
 //error
 const onError = function(err) {
-  console.log(err)
   $('#message').text("Whoopsie doodle, there's been an error.")
 }
 

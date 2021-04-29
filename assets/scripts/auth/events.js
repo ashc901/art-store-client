@@ -9,8 +9,6 @@ const onSignUp = function(event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  //get rid on this console log later
-  console.log(data)
   api.signUp(data)
     .then(ui.onSignUpSuccess)
     .catch(ui.onError)
@@ -30,7 +28,6 @@ const onSignIn = function(event) {
 
 //change password
 const onChangePassword = function (event) {
-  console.log("made  it here")
   event.preventDefault()
   // get the data from the form
   const form = event.target
@@ -46,7 +43,6 @@ const onChangePassword = function (event) {
 //sign out
 const onSignOut = function(event) {
   event.preventDefault()
-  //console.log(data)
   api.signOut()
     .then(ui.onSignOutSuccess)
     .catch(ui.onError)
@@ -64,17 +60,12 @@ const onCreateItem = function (event) {
 
 
   api.createItem(data)
-    .then(console.log(data))
     .then(ui.onCreateItemSuccess)
     .catch(ui.onError)
-  console.log('onCreateItem')
 }
 
 //index
 const onIndexItems = function() {
-  console.log("getgot")
-  //event.preventDefault()
-
   api.index()
     .then((response) => {
       (ui.onIndexSuccess(response))
