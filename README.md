@@ -1,22 +1,37 @@
 # Art Store Client
-CRUD STEPS
-  ADD HTML
-  EVENT HANDLER IN APP.JS
-  SUBMIT HANDLER CALLBACK IN EVENTS.JS
-  API CALL USING AJAX IN API.JS
-  API RESPONSE IN UI.JS
-  TEST
+An API to eventually create an auction house for the sale of art. This currently is only set up for the store owner to see and manipulate their own stock.
 
+## Links
 
-<!-- AUTH
-  SIGN UP
-  SIGN IN
-  CHANGE PASSWORD
-  SIGN OUT -->
+- [Other Repo](https://github.com/ashc901/Art-Store)
+- [Deployed API](https://git.heroku.com/floating-mountain-26988.git)
+- [Deployed Client](https://ashc901.github.io/art-store-client/)
 
-PRODUCT
-  -CREATE PRODUCT
-  UPDATE PRODUCT
-  INDEX PRODUCTS
-  SHOW PRODUCT
-  DELETE PRODUCT
+## User Stories
+
+### A User Should:
+
+- create profile
+- log in
+- change password
+- log out
+- add items to store
+- update a single owned item
+- delete a single owned item
+
+## Technologies Used
+
+- HTML
+- CSS
+- Javascript
+- Bootstrap
+
+## Unsolved Problems
+
+- Eventually I'd like to has a class of users who are patrons, with access to shops and a shopping cart.
+
+## Images
+
+### Wireframes
+
+https://imgur.com/a/204jYAG
